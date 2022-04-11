@@ -21,8 +21,24 @@ class requestHandler(BaseHTTPRequestHandler):
         output+= task
         output+= '</br>'
       output += '</body></html>'
+      
       self.wfile.write(output.encode())
-    
+   
+    if self.path.endswith('/tasklist/new'):
+      self.send_response(200)
+      self.send_header('Content-type', 'text/html')
+      self.end_headers()
+
+      output = ''
+      output += '<html><body>'
+      output += '<h1>Add a new task</h1>'
+      output += '<form method="POST" enctype="multipart/form-data" action="/tasklist/new">'
+      output += '<input name="task" type="text" placeholder="Add a new task">'
+      output += '<input type="submit" value="Submit">'
+      output += '</form>'
+      output += '</body></html>'
+      
+      self.wfile.write(output.encode())
     
     
 
