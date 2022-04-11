@@ -1,5 +1,5 @@
 from http.server import BaseHTTPRequestHandler , HTTPServer
-
+tasklist = ['Task 1', 'Task 2', 'Task 3', 'Task 4']
 class handler(BaseHTTPRequestHandler):
 
   def do_GET(self):
@@ -8,6 +8,17 @@ class handler(BaseHTTPRequestHandler):
     self.send_header('Content-type', 'text/plain')
     self.end_headers()
     self.wfile.write(self.path[1:].encode()) # will show the path of whatever the user typed in the browser
+    
+    output = ""
+    output += "<html><body>"
+    output += "<h2>Task List</h2>"
+    for task in tasklist:
+      output+= task
+      output+= "<br>"
+    output += "</body></html>"
+    self.wfile.write(output.encode('utf-8'))
+    print(output)
+    
     return
 
 def main ():
