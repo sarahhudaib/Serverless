@@ -8,7 +8,7 @@ this app will show the path of whatever the user typed in the browser
 ## Result
 
 ### from vercel side 
-![alt text](./api/serverless_api.png "serverless_api")
+![alt text](./api/assets/serverless_api.png "serverless_api")
 
 ### [Vercel Link](https://serverless-k6efu6whu-sarahhudaib.vercel.app/api/api)
 
