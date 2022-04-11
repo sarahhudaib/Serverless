@@ -1,5 +1,9 @@
 from http.server import BaseHTTPRequestHandler , HTTPServer
+
+
 tasklist = ['Task 1', 'Task 2', 'Task 3', 'Task 4']
+
+
 class handler(BaseHTTPRequestHandler):
 
   def do_GET(self):
@@ -14,9 +18,9 @@ class handler(BaseHTTPRequestHandler):
     output += "<h2>Task List</h2>"
     for task in tasklist:
       output+= task
-      output+= "<br>"
+      output+= "</br>"
     output += "</body></html>"
-    self.wfile.write(output.encode('utf-8'))
+    self.wfile.write(output.encode())
     print(output)
     
     return
