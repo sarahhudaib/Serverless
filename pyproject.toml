@@ -6,6 +6,7 @@ authors = ["SARAH AHMAD HUDAIB <SARAHHUDAIB@YAHOO.COM>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+lxml = "^4.8.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
